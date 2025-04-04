@@ -10,6 +10,9 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.json({ message: 'Hello from Node.js CI App!' });
 });
+app.get('/api/version', (req, res) => {
+    res.json({ version: '1.0.1' });
+  });
 
 app.use('/api/users', userRoutes);
 

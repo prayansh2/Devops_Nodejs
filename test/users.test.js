@@ -27,4 +27,12 @@ describe('User API Endpoints', () => {
     expect(res.statusCode).toEqual(201);
     expect(res.body.name).toBe('Charlie');
   });
+
+  it('should return app version', async () => {
+    const res = await request(app).get('/api/version');
+    expect(res.statusCode).toBe(200);
+    expect(res.body.version).toBeDefined();
+  });
+
+  
 });
